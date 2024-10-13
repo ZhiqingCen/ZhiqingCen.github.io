@@ -7,45 +7,52 @@ description: "Comprehensive notes on Java programming. Includes detailed explana
 ---
 
 ## keywords
-naming
-* `Class` -> PascalNamingConvention
-    * first letter of every words upper case
-* `Method` -> camelNamingConvention
-    * camel case
 
-~~~java
+**naming**
+
+- `Class` -> PascalNamingConvention
+    - first letter of every words upper case
+- `Method` -> camelNamingConvention
+    - camel case
+
+```java
 // System -> Class
 // out -> field (belongs to class PrintStream)
 // println -> method
 System.out.println("Hello World!");
 // shourtcut -> sout + Tab
-~~~
+```
 
 `this`
-* invoke current class constructor
-* invoke current class method
-* return the current class object
-* pass an argument in the method call
-* pass an argument in the constructor call
+
+- invoke current class constructor
+- invoke current class method
+- return the current class object
+- pass an argument in the method call
+- pass an argument in the constructor call
 
 `static`
-* a non-access modifier used for methods and attributes
-* static attributes/methods can be access without creating an object of the class
+
+- a non-access modifier used for methods and attributes
+- static attributes/methods can be access without creating an object of the class
 
 ## Data Types
 
 ### Compile & Execute
-~~~console
+
+```console
 // compile code
 $ javac Filename.java
 
 // run code
 $ java PackageName.Filename
-~~~
+```
 
 ### Variables & Constant
+
 `variables`
-~~~java
+
+```java
 // declare variables
 int a = 0, z = 100;
 long b = 250;
@@ -78,16 +85,19 @@ System.out.println(x); // StadardOut: 2
 System.out.println(y); // StadardOut: 1
 System.out.println(z); // StadardOut: 2
 
-~~~
+```
 
 `constants`
-~~~java
+
+```java
 // constant name in UpperCase, constant cannot be change
 final float PI = 3.14F;
-~~~
+```
 
 ### Primitive & Reference Types
+
 `Primitive Types` -> for storing simple values like numbers, strings and boolean
+
 |  Type   | Bytes |                Range                 |
 | :-----: | :---: | :----------------------------------: |
 |  byte   |   1   |             [-128, 127]              |
@@ -101,7 +111,8 @@ final float PI = 3.14F;
 
 
 `Reference Types` -> for storing complex objects like data and email messages
-~~~java
+
+```java
 // Date in package java.util
 import java.util.Date;
 
@@ -110,10 +121,11 @@ import java.util.Date;
 Date now = new Date();
 // Date() by default returns current DateTime
 now.getTime();
-~~~
+```
 
 `Primitive Types` vs. `Reference Types`
-~~~java
+
+```java
 // Primitive
 byte x = 1;
 byte y = x;
@@ -127,10 +139,11 @@ Point point1 = new Point(x:1, y:1); // allocate seperate part of memory for poin
 Point point2 = point1; // allocate another memory for point2, store address of the point object (100)
 point1.x = 2; // point1 & point2 reference the exact same point object
 System.out.println(point2); // StadardOut: java.awt.Point[x=2,y=1]
-~~~
+```
 
 ### Casting
-~~~java
+
+```java
 // implicit casting: byte -> short -> int -> long -> float -> double
 short x = 1;
 int y = x + 2; // StadardOut: 3
@@ -149,12 +162,13 @@ int result = math.round(1.1F); // StadardOut: 1
 int result = (int)math.ceil(1.1F); // StadardOut: 2
 int result = (int)math.floor(1.1F); // StadardOut: 1
 double result = math.random(); // generate random double between 0 and 1
-int result = (int)math.round(math.random * 100);
-int result = (int)(math.random * 100);
-~~~
+int result = (int)math.round(math.random - 100);
+int result = (int)(math.random - 100);
+```
 
 ### Format Numbers
-~~~java
+
+```java
 // format as currency
 NumberFormat currency = NumberFormat.getCurrencyInstance();
 // return a string representation formatted as currency
@@ -165,11 +179,13 @@ NumberFormat percent = NumberFormat.getPercentInstance();
 // return a string representation formatted as percentage
 String result = percent.format(0.1); // StadardOut: 10%
 
-~~~
+```
 
 ### String
+
 `String` -> string in java are immutable
-~~~java
+
+```java
 // String -> in java.lang package
 String message1 = new String("Hello World!");
 String message2 = "Hello World";
@@ -192,11 +208,14 @@ String i = "hi";
 if (!i.equals("hi")) {
     System.out.println("i is not hi");
 }
-~~~
+```
 
 ### Array
+
 `array` -> fixed length
-~~~java
+
+{% raw %}
+```java
 // boolean array by default initialise to false
 // string array by default initialise to empty string
 // declare an int array with 5 elements, initialise with zeros
@@ -219,14 +238,17 @@ numbers[0][0] = 1;
 System.out.println(Arrays.deepToString(numbers)); // print multi-dimentional arrays, StadardOut: [[1, 0, 0], [0, 0, 0]]
 
 int[][] numberArray = {{1, 2, 3}, {4, 5, 6}};
-~~~
+```
+{% endraw %}
 
 ### ArrayList
-`ArrayList` -> Dynamic sized arrays in Java that implement List interface
-* has a regular array inside it, when an element is added, it is placed into the array
-* if the array is not big enough, a new, larger array is created to replace the old one and the old one is removed
 
-~~~java
+`ArrayList` -> Dynamic sized arrays in Java that implement List interface
+
+- has a regular array inside it, when an element is added, it is placed into the array
+- if the array is not big enough, a new, larger array is created to replace the old one and the old one is removed
+
+```java
 // initialise ArrayList
 import java.util.ArrayList;
 List<Integer> a = new ArrayList<Integer>(); // List is interface
@@ -244,14 +266,16 @@ arrL2.clear(); // remove all elements
 arrL2.size(); // length of ArrayList
 import java.util.Collections;
 Collections.sort(arrL2); // sort ArrayList
-~~~
+```
 
 ### LinkedList
-`LinkedList`
-* the list has a link to the first container and each container has a link to the next container in the list
-* to add an element to the list, the element is placed into a new container and that container is linked to one of the other containers in the list
 
-~~~java
+`LinkedList`
+
+- the list has a link to the first container and each container has a link to the next container in the list
+- to add an element to the list, the element is placed into a new container and that container is linked to one of the other containers in the list
+
+```java
 import java.util.LinkedList;
 LinkedList<String> fruits = new LinkedList<String>();
 
@@ -270,20 +294,23 @@ fruits.removeLast();
 fruits.get(0); // access element by index
 fruits.getFirst();
 fruits.getLast();
-~~~
+```
 
 ### HashMap
+
 `HashMap`
-* not synchronised
-    * not-thread safe and can’t be shared between many threads without proper synchronisation code
-* allows one null key and multiple null values
-* generally preferred over HashTable if thread synchronisation is not needed
+
+- not synchronised
+    - not-thread safe and can’t be shared between many threads without proper synchronisation code
+- allows one null key and multiple null values
+- generally preferred over HashTable if thread synchronisation is not needed
 
 `HashTable`
-* synchronised
-* doesn’t allow any null key or value
 
-~~~java
+- synchronised
+- doesn’t allow any null key or value
+
+```java
 import java.util.HashMap;
 HashMap<String, String> capitalCities = new HashMap<String, String>();
 HashMap<String, Integer> people = new HashMap<String, Integer>();
@@ -303,10 +330,11 @@ capitalCities.containsValue();
 for (String i : capitalCities.keySet()) {
   System.out.println("key: " + i + " value: " + capitalCities.get(i));
 }
-~~~
+```
 
 ### Read Input
-~~~java
+
+```java
 Scanner scanner = new Scanner(System.in);
 System.out.print("Age: ");
 byte age = scanner.nextByte(); // read in byte
@@ -314,12 +342,13 @@ System.out.println("You are" + age);
 String name = scanner.next(); // read in string (stop at space)
 String fullName = scanner.nextLine(); // read in string (stop at new line)
 scanner.close(); // close scanner
-~~~
+```
 
 ## Conditional Statement
 
 ### If Statement
-~~~java
+
+```java
 // if statement
 if (a == 0) {
 
@@ -336,10 +365,11 @@ String className = "Economy";
 if (income > 100_000) {
     className = "First"
 }
-~~~
+```
 
 ### Switch Statement
-~~~java
+
+```java
 String role = "admin";
 
 switch (role) {
@@ -354,17 +384,18 @@ switch (role) {
     default:
         System.out.println("You're a guest");
 }
-~~~
+```
 
 ### Loops
-~~~java
+
+```java
 // for loops
 for (int i = 0; i < 5; i++) {
     System.out.println(i);
 }
 
 // for each loop, can only loop forward
-String[] fruits = {'apple', 'banana', 'cherry'};
+String[] fruits = {"apple", "banana", "cherry"};
 for (String fruit : fruits) {
     System.out.println(fruit);
 }
@@ -381,27 +412,30 @@ int i = 0;
 do {
     System.out.println(i);
 } while (i < 5);
-~~~
+```
 
 ### Try-except Block
-~~~java
+
+```java
 // try-except block
 try {
 
 } catch (Exception e) {
 
 }
-~~~
+```
 
 ## Methods
 
-~~~java
+```java
 
-~~~
+```
 
 ## Enumeration
+
 Advanced enum example
-~~~java
+
+```java
 enum CupSize {
     SMALL(25) {
         public String getDetail() {
@@ -460,4 +494,8 @@ public class MainForTestingEnum {
         System.out.println(coffee1.toString() + ", " + coffee1.getCupSize().getDetail()); // Coffee [cupSize: SMALL, volume: 25 ], Use the clear glass cup
     }
 }
-~~~
+```
+
+## References
+
+- course COMP2511 - Object-Oriented Design & Programming
