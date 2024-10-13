@@ -1,5 +1,5 @@
 ---
-title: Rust
+title: Rust Notes
 date: 2024-05-01 09:00:00 +1000
 categories: [Programming, Rust]
 tags: [rust, programming languages, code design]
