@@ -6,7 +6,7 @@ tags: [rust, programming languages, code design]
 description: "A deep dive into solving modern programming challenges using the Rust programming language, comparing its strengths and weaknesses to other languages."
 ---
 
-# Solving Modern Programming Problems with Rust Notes
+## Solving Modern Programming Problems with Rust Notes
 
 **Starting on Rust**
 
