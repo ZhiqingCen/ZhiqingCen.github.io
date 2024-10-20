@@ -1,6 +1,6 @@
 ---
 title: Prompt Engineering Notes
-date: 2024-10-13 15:00:00 +1000
+date: 2024-10-13 15:00:00 +1100
 categories: [AI, Prompt Engineering]
 tags: [prompt engineering, LLM, chain of thought, instruction tuning, anthropic, claude]
 description: "Notes on prompt engineering techniques for LLMs, including instruction tuning, chain of thought prompting, model limitations, and best practices for interacting with large language models."
